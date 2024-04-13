@@ -3,9 +3,58 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.9.34728.123
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{5C4E5B1C-9E4C-42DD-83AF-F06505ECCCFC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{1895B8A7-BB3C-46D8-B011-441A118E48AF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{D581C44C-CACA-4284-8FEF-049AB4D75D7C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApiProject.Application", "Core\ApiProject.Application\ApiProject.Application.csproj", "{06DDAAEC-6061-4F4D-A4EB-B67E1868BD0D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApiProject.Domain", "Core\ApiProject.Domain\ApiProject.Domain.csproj", "{B5E1E9F3-0C8E-4B3F-813A-2D749ED8646B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApiProject.Infrastructure", "Infrastructure\ApiProject.Infrastructure\ApiProject.Infrastructure.csproj", "{A41ADC44-303F-46ED-8BDB-4352F215B752}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApiProject.Persistence", "Infrastructure\ApiProject.Persistence\ApiProject.Persistence.csproj", "{BB51C61A-B4D7-486D-8880-D3903AA48189}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApiProject.Api", "Presentation\ApiProject.Api\ApiProject.Api.csproj", "{60BE4B1B-9BF9-43FA-A6B7-D612835FCEC0}"
+EndProject
 Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{06DDAAEC-6061-4F4D-A4EB-B67E1868BD0D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{06DDAAEC-6061-4F4D-A4EB-B67E1868BD0D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{06DDAAEC-6061-4F4D-A4EB-B67E1868BD0D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{06DDAAEC-6061-4F4D-A4EB-B67E1868BD0D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B5E1E9F3-0C8E-4B3F-813A-2D749ED8646B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B5E1E9F3-0C8E-4B3F-813A-2D749ED8646B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B5E1E9F3-0C8E-4B3F-813A-2D749ED8646B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B5E1E9F3-0C8E-4B3F-813A-2D749ED8646B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A41ADC44-303F-46ED-8BDB-4352F215B752}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A41ADC44-303F-46ED-8BDB-4352F215B752}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A41ADC44-303F-46ED-8BDB-4352F215B752}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A41ADC44-303F-46ED-8BDB-4352F215B752}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BB51C61A-B4D7-486D-8880-D3903AA48189}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BB51C61A-B4D7-486D-8880-D3903AA48189}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BB51C61A-B4D7-486D-8880-D3903AA48189}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BB51C61A-B4D7-486D-8880-D3903AA48189}.Release|Any CPU.Build.0 = Release|Any CPU
+		{60BE4B1B-9BF9-43FA-A6B7-D612835FCEC0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{60BE4B1B-9BF9-43FA-A6B7-D612835FCEC0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{60BE4B1B-9BF9-43FA-A6B7-D612835FCEC0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{60BE4B1B-9BF9-43FA-A6B7-D612835FCEC0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{06DDAAEC-6061-4F4D-A4EB-B67E1868BD0D} = {5C4E5B1C-9E4C-42DD-83AF-F06505ECCCFC}
+		{B5E1E9F3-0C8E-4B3F-813A-2D749ED8646B} = {5C4E5B1C-9E4C-42DD-83AF-F06505ECCCFC}
+		{A41ADC44-303F-46ED-8BDB-4352F215B752} = {1895B8A7-BB3C-46D8-B011-441A118E48AF}
+		{BB51C61A-B4D7-486D-8880-D3903AA48189} = {1895B8A7-BB3C-46D8-B011-441A118E48AF}
+		{60BE4B1B-9BF9-43FA-A6B7-D612835FCEC0} = {D581C44C-CACA-4284-8FEF-049AB4D75D7C}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F357F71D-6210-4F7A-9DE6-025DB5B9C125}
