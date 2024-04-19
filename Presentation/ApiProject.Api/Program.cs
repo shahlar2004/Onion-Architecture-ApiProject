@@ -1,4 +1,6 @@
 
+using ApiProject.Persistence;
+
 namespace ApiProject.Api
 {
     public class Program
@@ -21,7 +23,10 @@ namespace ApiProject.Api
                 .AddJsonFile("appsettings.json", optional: false)
                 .AddJsonFile($"appsettings.{env.EnvironmentName}.json", optional: true);
 
+            builder.Services.AddPersistence(builder.Configuration);
+
             var app = builder.Build();
+
 
             // Configure the HTTP request pipeline.
             if (app.Environment.IsDevelopment())
