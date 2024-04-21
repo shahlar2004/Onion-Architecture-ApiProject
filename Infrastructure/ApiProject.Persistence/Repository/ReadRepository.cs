@@ -28,7 +28,7 @@ namespace ApiProject.Persistence.Repository
 
         public async Task<IList<T>> GetAllAsync(Expression<Func<T, bool>>? predicate = null, Func<IQueryable<T>, IIncludableQueryable<T, object>>? include = null, Func<IQueryable<T>, IOrderedQueryable<T>>? orderBy = null, bool enableTracking = false)
         {
-            IQueryable<T> queryable = Table;
+            IQueryable<T> queryable = dbContext.Set<T>();
 
             if(!enableTracking) queryable=queryable.AsNoTracking();
             if (predicate is not null) queryable=queryable.Where(predicate);
