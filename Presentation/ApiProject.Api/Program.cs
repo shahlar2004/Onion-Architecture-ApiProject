@@ -1,7 +1,10 @@
 
 using ApiProject.Persistence;
 
+using ApiProject.Application;
+
 namespace ApiProject.Api
+
 {
     public class Program
     { 
@@ -24,7 +27,7 @@ namespace ApiProject.Api
                 .AddJsonFile($"appsettings.{env.EnvironmentName}.json", optional: true);
 
             builder.Services.AddPersistence(builder.Configuration);
-
+            builder.Services.AddApplication();
             var app = builder.Build();
 
 
