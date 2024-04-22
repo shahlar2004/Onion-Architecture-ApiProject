@@ -1,6 +1,8 @@
 ﻿using ApiProject.Application.Interfaces.Repositories;
+using ApiProject.Application.Interfaces.UnitOfWorks;
 using ApiProject.Persistence.Context;
 using ApiProject.Persistence.Repository;
+using ApiProject.Persistence.UnitOfWorks;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -20,7 +22,8 @@ namespace ApiProject.Persistence
         public static void AddPersistence(this IServiceCollection service, IConfiguration config)
         {
             service.AddDbContext<AppDbContext>(opt => opt.UseSqlServer(config.GetConnectionString("DefaultConnection")));
-            service.AddScoped(typeof(IReadRepoitory<>),typeof(ReadRepository<>));
+            service.AddScoped(typeof(IReadRepository<>),typeof(ReadRepository<>));
+            service.AddScoped<IUnitOfWork, UnitOfWork>();  
         }
     }
 }

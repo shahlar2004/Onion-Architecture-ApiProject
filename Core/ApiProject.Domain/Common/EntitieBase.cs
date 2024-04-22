@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ApiProject.Domain.Common
 {
-    public class EntitieBase
+    public class EntitieBase:IEntitieBase
     {
         public int Id { get; set; } 
         public DateTime CreatedDate { get; set; }= DateTime.Now;
