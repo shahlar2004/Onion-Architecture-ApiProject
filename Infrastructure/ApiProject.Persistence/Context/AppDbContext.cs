@@ -2,7 +2,6 @@
 
 using ApiProject.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
@@ -18,15 +17,18 @@ namespace ApiProject.Persistence.Context
         {
             
         }
-        public AppDbContext(DbContextOptions options):base(options)
+        public AppDbContext(DbContextOptions options) : base(options)
         {
 
         }
+
 
         DbSet<Brand> brands { get; set; }   
         DbSet<Product> products { get; set; }
         DbSet<Detail> details { get; set; }
         DbSet<Category> categories { get; set; }
+
+
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -34,5 +36,9 @@ namespace ApiProject.Persistence.Context
             modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
         }
 
+        public static implicit operator System.Data.Entity.DbContext(AppDbContext v)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
