@@ -1,11 +1,11 @@
 ﻿using ApiProject.Application.Interfaces.Repositories;
 using ApiProject.Domain.Common;
 using ApiProject.Persistence.Context;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using System;
 using System.Collections.Generic;
-using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -22,31 +22,34 @@ namespace ApiProject.Persistence.Repository
         }
 
 
-        //private DbSet<T> Table { get => appDbContext.Set<T>(); }
+        private DbSet<T> Table { get => appDbContext.Set<T>(); }   
 
-        public Task AddAsync(T entity)
+        public async Task AddAsync(T entity)
         {
-            throw new NotImplementedException();
+            await Table.AddAsync(entity);
         }
 
-        public Task AddRangeAsync(T entity)
+        public async Task AddRangeAsync(IList<T> entity)
         {
-            throw new NotImplementedException();
+            await Table.AddRangeAsync(entity);
         }
 
-        public Task HardDeleteAsync(T entity)
+        public async Task HardDeleteAsync(T entity)
         {
-            throw new NotImplementedException();
+            await Task.Run(() =>Table.Remove(entity));
         }
 
-        public Task SoftDeleteasync(T entity)
+        //public async Task SoftDeleteasync(T entity)
+        //{
+        //    await Task.Run(() => Table.Update(entity));
+        //}
+
+        public async Task<T> UpdateAsync(T entity)
         {
-            throw new NotImplementedException();
+            await Task.Run(() =>Table.Update(entity));
+            return entity;
         }
 
-        public Task<T> UpdateAsync(T entity)
-        {
-            throw new NotImplementedException();
-        }
+
     }
 }

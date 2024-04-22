@@ -12,11 +12,11 @@ namespace ApiProject.Application.Interfaces.Repositories
 
         Task AddAsync(T entity);
 
-        Task AddRangeAsync(T entity);
+        Task AddRangeAsync(IList<T> entities);
 
         Task<T> UpdateAsync(T entity);
 
-        Task SoftDeleteasync(T entity);
+       // Task SoftDeleteasync(T entity);
             
         Task HardDeleteAsync(T entity);
     }
