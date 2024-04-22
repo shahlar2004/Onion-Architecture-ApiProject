@@ -4,6 +4,7 @@ using ApiProject.Persistence.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ApiProject.Persistence.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240422191233_dataseedProducts")]
+    partial class dataseedProducts
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -49,23 +52,23 @@ namespace ApiProject.Persistence.Migrations
                         new
                         {
                             Id = 1,
-                            CreatedDate = new DateTime(2024, 4, 22, 23, 13, 49, 824, DateTimeKind.Local).AddTicks(7080),
+                            CreatedDate = new DateTime(2024, 4, 22, 23, 12, 33, 521, DateTimeKind.Local).AddTicks(2863),
                             IsDeleted = false,
-                            Name = "Filmlər & Ayyaqqabı"
+                            Name = "bəzək, Geyim & Oyuncaqlar"
                         },
                         new
                         {
                             Id = 2,
-                            CreatedDate = new DateTime(2024, 4, 22, 23, 13, 49, 824, DateTimeKind.Local).AddTicks(7201),
+                            CreatedDate = new DateTime(2024, 4, 22, 23, 12, 33, 521, DateTimeKind.Local).AddTicks(2990),
                             IsDeleted = false,
-                            Name = "Ayyaqqabı, Elektronika & oyunlar"
+                            Name = "Oyuncaqlar & bəzək"
                         },
                         new
                         {
                             Id = 3,
-                            CreatedDate = new DateTime(2024, 4, 22, 23, 13, 49, 824, DateTimeKind.Local).AddTicks(7221),
+                            CreatedDate = new DateTime(2024, 4, 22, 23, 12, 33, 521, DateTimeKind.Local).AddTicks(3003),
                             IsDeleted = true,
-                            Name = "İdman"
+                            Name = "Geyim, turizm & Avtomobil"
                         });
                 });
 
@@ -101,7 +104,7 @@ namespace ApiProject.Persistence.Migrations
                         new
                         {
                             Id = 1,
-                            CreatedDate = new DateTime(2024, 4, 22, 23, 13, 49, 825, DateTimeKind.Local).AddTicks(534),
+                            CreatedDate = new DateTime(2024, 4, 22, 23, 12, 33, 521, DateTimeKind.Local).AddTicks(6640),
                             IsDeleted = false,
                             Name = "Elektrik",
                             ParentId = 0,
@@ -110,7 +113,7 @@ namespace ApiProject.Persistence.Migrations
                         new
                         {
                             Id = 2,
-                            CreatedDate = new DateTime(2024, 4, 22, 23, 13, 49, 825, DateTimeKind.Local).AddTicks(539),
+                            CreatedDate = new DateTime(2024, 4, 22, 23, 12, 33, 521, DateTimeKind.Local).AddTicks(6643),
                             IsDeleted = false,
                             Name = "Moda",
                             ParentId = 0,
@@ -119,7 +122,7 @@ namespace ApiProject.Persistence.Migrations
                         new
                         {
                             Id = 3,
-                            CreatedDate = new DateTime(2024, 4, 22, 23, 13, 49, 825, DateTimeKind.Local).AddTicks(540),
+                            CreatedDate = new DateTime(2024, 4, 22, 23, 12, 33, 521, DateTimeKind.Local).AddTicks(6644),
                             IsDeleted = false,
                             Name = "Bilgisayar",
                             ParentId = 1,
@@ -128,7 +131,7 @@ namespace ApiProject.Persistence.Migrations
                         new
                         {
                             Id = 4,
-                            CreatedDate = new DateTime(2024, 4, 22, 23, 13, 49, 825, DateTimeKind.Local).AddTicks(541),
+                            CreatedDate = new DateTime(2024, 4, 22, 23, 12, 33, 521, DateTimeKind.Local).AddTicks(6645),
                             IsDeleted = false,
                             Name = "Qadın",
                             ParentId = 2,
@@ -172,28 +175,28 @@ namespace ApiProject.Persistence.Migrations
                         {
                             Id = 1,
                             CategoryId = 1,
-                            CreatedDate = new DateTime(2024, 4, 22, 23, 13, 49, 828, DateTimeKind.Local).AddTicks(589),
-                            Description = "Dolores autem aliquid nostrum odit.",
+                            CreatedDate = new DateTime(2024, 4, 22, 23, 12, 33, 523, DateTimeKind.Local).AddTicks(5373),
+                            Description = "Fuga et assumenda laboriosam nihil.",
                             IsDeleted = false,
-                            Title = "Excepturi."
+                            Title = "Praesentium."
                         },
                         new
                         {
                             Id = 2,
                             CategoryId = 3,
-                            CreatedDate = new DateTime(2024, 4, 22, 23, 13, 49, 828, DateTimeKind.Local).AddTicks(767),
-                            Description = "Dolor autem hic odio et.",
+                            CreatedDate = new DateTime(2024, 4, 22, 23, 12, 33, 523, DateTimeKind.Local).AddTicks(5520),
+                            Description = "Est temporibus et aut et.",
                             IsDeleted = true,
-                            Title = "Est."
+                            Title = "Et."
                         },
                         new
                         {
                             Id = 3,
                             CategoryId = 4,
-                            CreatedDate = new DateTime(2024, 4, 22, 23, 13, 49, 828, DateTimeKind.Local).AddTicks(805),
-                            Description = "Iure tempore sint aperiam quod.",
+                            CreatedDate = new DateTime(2024, 4, 22, 23, 12, 33, 523, DateTimeKind.Local).AddTicks(5554),
+                            Description = "Ducimus ut placeat nesciunt consequatur.",
                             IsDeleted = false,
-                            Title = "Voluptatem."
+                            Title = "Laudantium."
                         });
                 });
 
@@ -233,30 +236,6 @@ namespace ApiProject.Persistence.Migrations
                     b.HasIndex("BrandId");
 
                     b.ToTable("products");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            BrandId = 1,
-                            CreatedDate = new DateTime(2024, 4, 22, 23, 13, 49, 831, DateTimeKind.Local).AddTicks(1235),
-                            Description = "The slim & simple Maple Gaming Keyboard from Dev Byte comes with a sleek body and 7- Color RGB LED Back-lighting for smart functionality",
-                            Discount = 1.652621210522590m,
-                            IsDeleted = false,
-                            Price = 395.15m,
-                            Title = "Əlverişli Pambıq Beret"
-                        },
-                        new
-                        {
-                            Id = 2,
-                            BrandId = 1,
-                            CreatedDate = new DateTime(2024, 4, 22, 23, 13, 49, 831, DateTimeKind.Local).AddTicks(1415),
-                            Description = "Carbonite web goalkeeper gloves are ergonomically designed to give easy fit",
-                            Discount = 9.542020942142080m,
-                            IsDeleted = false,
-                            Price = 595.75m,
-                            Title = "Balaca Rezin Kulon"
-                        });
                 });
 
             modelBuilder.Entity("CategoryProduct", b =>

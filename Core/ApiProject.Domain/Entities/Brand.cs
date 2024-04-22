@@ -18,7 +18,7 @@ namespace ApiProject.Domain.Entities
         {
             this.Name = Name;
         }
-        public required string Name { get; set; }    
+        public string Name { get; set; }    
 
     }
 }

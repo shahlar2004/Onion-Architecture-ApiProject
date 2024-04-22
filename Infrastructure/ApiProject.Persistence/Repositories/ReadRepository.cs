@@ -12,7 +12,7 @@ using System.Threading.Tasks;
 
 namespace ApiProject.Persistence.Repository
 {
-    public class ReadRepository<T> : IReadRepoitory<T> where T : class, IEntitieBase, new()
+    public class ReadRepository<T> : IReadRepository<T> where T : class, IEntitieBase, new()
     {
         private readonly AppDbContext dbContext;
 

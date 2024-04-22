@@ -36,6 +36,8 @@ namespace ApiProject.Persistence.Configuration
                 Discount=faker.Random.Decimal(0,10),
                 Price=faker.Finance.Amount(10,1000)
             };
+
+            builder.HasData(product1, product2);
         }
     }
 }
