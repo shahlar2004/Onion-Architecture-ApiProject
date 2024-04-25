@@ -1,7 +1,8 @@
-﻿//using ApiProject.Application.Interfaces.AutoMapper;
+﻿using ApiProject.Application.Interfaces.AutoMapper;
+using ApiProject.Application.DTOs;
 using ApiProject.Application.Interfaces.UnitOfWorks;
 using ApiProject.Domain.Entities;
-using AutoMapper;
+//using AutoMapper;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -24,36 +25,28 @@ namespace ApiProject.Application.Features.Query.Products.GetAllProducts
         }
         public async Task<IList<GetAllProductsQueryResponse>> Handle(GetAllProductsQueryRequest request, CancellationToken cancellationToken)
         {
-            var products = await unitOfWork.GetReadRepoitory<Product>().GetAllAsync(include: x=>x.Include(b=>b.Brand));
-
-          var map= mapper.Map<GetAllProductsQueryResponse>(products);  
-
-
-    
-
-            //List<GetAllProductsQueryResponse> response = new();
-
-            //foreach (var product in products)
-            //{
-            //    response.Add(new GetAllProductsQueryResponse
-            //    {
-            //        Title= product.Title,   
-            //        Description= product.Description,   
-            //        Price= product.Price-(product.Price*product.Discount/100),
-            //        Discount=product.Discount,
-            //    });
+            var products = await unitOfWork.GetReadRepoitory<Product>().GetAllAsync(include: x => x.Include(b => b.Brand));
+           //var map = mapper.Map<List<GetAllProductsQueryResponse>>(products);
 
 
 
 
-            //    var map=mapper.Map<GetAllProductsQueryResponse,Product>(products);
+            List<GetAllProductsQueryResponse> response = new();
 
-            //foreach (var product in map) 
-            //    product.Price-=(product.Price * product.Discount / 100);
+            foreach (var product in products)
+            {
+                response.Add(new GetAllProductsQueryResponse
+                {
+                    Title = product.Title,
+                    Description = product.Description,
+                    Price = product.Price - (product.Price * product.Discount / 100),
+                    Discount = product.Discount,
+                    Brand=product.Brand.Name
+                });
 
 
-                return  map;    
-
+            }
+                return response;
         }
     }
 }
