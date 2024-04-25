@@ -19,6 +19,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ApiProject.Persistence", "I
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ApiProject.Api", "Presentation\ApiProject.Api\ApiProject.Api.csproj", "{60BE4B1B-9BF9-43FA-A6B7-D612835FCEC0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApiProject.Mapper", "ApiProject.Mapper\ApiProject.Mapper.csproj", "{816864CB-FC6C-4E3C-AB76-2C728019DEC3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +47,10 @@ Global
 		{60BE4B1B-9BF9-43FA-A6B7-D612835FCEC0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{60BE4B1B-9BF9-43FA-A6B7-D612835FCEC0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{60BE4B1B-9BF9-43FA-A6B7-D612835FCEC0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{816864CB-FC6C-4E3C-AB76-2C728019DEC3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{816864CB-FC6C-4E3C-AB76-2C728019DEC3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{816864CB-FC6C-4E3C-AB76-2C728019DEC3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{816864CB-FC6C-4E3C-AB76-2C728019DEC3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -55,6 +61,7 @@ Global
 		{A41ADC44-303F-46ED-8BDB-4352F215B752} = {1895B8A7-BB3C-46D8-B011-441A118E48AF}
 		{BB51C61A-B4D7-486D-8880-D3903AA48189} = {1895B8A7-BB3C-46D8-B011-441A118E48AF}
 		{60BE4B1B-9BF9-43FA-A6B7-D612835FCEC0} = {D581C44C-CACA-4284-8FEF-049AB4D75D7C}
+		{816864CB-FC6C-4E3C-AB76-2C728019DEC3} = {5C4E5B1C-9E4C-42DD-83AF-F06505ECCCFC}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F357F71D-6210-4F7A-9DE6-025DB5B9C125}

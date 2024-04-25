@@ -9,6 +9,6 @@ namespace ApiProject.Application.Features.Query.Products.GetAllProducts
 {
     public class GetAllProductsQueryRequest:IRequest<IList<GetAllProductsQueryResponse>>
     {
-
+     
     }
 }
