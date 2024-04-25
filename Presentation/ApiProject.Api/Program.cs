@@ -1,6 +1,6 @@
 
 using ApiProject.Persistence;
-
+using ApiProject.Mapper;
 using ApiProject.Application;
 
 namespace ApiProject.Api
@@ -28,6 +28,7 @@ namespace ApiProject.Api
 
             builder.Services.AddPersistence(builder.Configuration);
             builder.Services.AddApplication();
+            builder.Services.AddCustomerMapper();
             var app = builder.Build();
 
 
