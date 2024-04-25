@@ -1,6 +1,7 @@
-﻿using ApiProject.Application.Interfaces.AutoMapper;
+﻿//using ApiProject.Application.Interfaces.AutoMapper;
 using ApiProject.Application.Interfaces.UnitOfWorks;
 using ApiProject.Domain.Entities;
+using AutoMapper;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -25,6 +26,9 @@ namespace ApiProject.Application.Features.Query.Products.GetAllProducts
         {
             var products = await unitOfWork.GetReadRepoitory<Product>().GetAllAsync(include: x=>x.Include(b=>b.Brand));
 
+          var map= mapper.Map<GetAllProductsQueryResponse>(products);  
+
+
     
 
             //List<GetAllProductsQueryResponse> response = new();
@@ -42,10 +46,10 @@ namespace ApiProject.Application.Features.Query.Products.GetAllProducts
 
 
 
-                var map=mapper.Map<GetAllProductsQueryResponse,Product>(products);
+            //    var map=mapper.Map<GetAllProductsQueryResponse,Product>(products);
 
-            foreach (var product in map) 
-                product.Price-=(product.Price * product.Discount / 100);
+            //foreach (var product in map) 
+            //    product.Price-=(product.Price * product.Discount / 100);
 
 
                 return  map;    
