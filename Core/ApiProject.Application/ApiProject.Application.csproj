@@ -7,11 +7,16 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="MediatR" Version="12.2.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.18" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\ApiProject.Domain\ApiProject.Domain.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Features\Command\" />
   </ItemGroup>
 
 </Project>
