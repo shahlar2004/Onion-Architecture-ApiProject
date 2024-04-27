@@ -16,13 +16,12 @@ namespace ApiProject.Application.Features.Query.Products.GetAllProducts
     public class GetAllProductsQueryHandler : IRequestHandler<GetAllProductsQueryRequest, IList<GetAllProductsQueryResponse>>
     {
         private readonly IUnitOfWork unitOfWork;
-        private readonly IMapper mapper;
 
-        public GetAllProductsQueryHandler(IUnitOfWork unitOfWork, IMapper mapper)
+        public GetAllProductsQueryHandler(IUnitOfWork unitOfWork)
         {
             this.unitOfWork = unitOfWork;
-            this.mapper = mapper;
         }
+
         public async Task<IList<GetAllProductsQueryResponse>> Handle(GetAllProductsQueryRequest request, CancellationToken cancellationToken)
         {
             var products = await unitOfWork.GetReadRepoitory<Product>().GetAllAsync(include: x => x.Include(b => b.Brand));
@@ -32,6 +31,7 @@ namespace ApiProject.Application.Features.Query.Products.GetAllProducts
 
 
             List<GetAllProductsQueryResponse> response = new();
+
 
             foreach (var product in products)
             {
@@ -43,7 +43,6 @@ namespace ApiProject.Application.Features.Query.Products.GetAllProducts
                     Discount = product.Discount,
                     Brand=product.Brand.Name
                 });
-
 
             }
                 return response;

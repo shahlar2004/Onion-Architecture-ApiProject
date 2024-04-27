@@ -17,7 +17,7 @@ namespace ApiProject.Domain.Entities
         public  decimal Price { get; set; } 
         public  decimal Discount { get; set; }  
 
-        public ICollection<Category> Categories { get; set; }
+        public ICollection<ProductCategory> ProductCategories { get; set; }
 
     }
 }

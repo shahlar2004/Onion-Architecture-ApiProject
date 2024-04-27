@@ -28,6 +28,8 @@ namespace ApiProject.Persistence.Context
         DbSet<Detail> details { get; set; }
         DbSet<Category> categories { get; set; }
 
+        DbSet<ProductCategory> productsCategory { get; set; }
+
 
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
