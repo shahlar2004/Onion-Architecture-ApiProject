@@ -28,7 +28,7 @@ namespace ApiProject.Persistence.Context
         DbSet<Detail> details { get; set; }
         DbSet<Category> categories { get; set; }
 
-        DbSet<ProductCategory> productsCategory { get; set; }
+       DbSet<ProductCategory> productsCategory { get; set; }
 
 
 
@@ -38,9 +38,6 @@ namespace ApiProject.Persistence.Context
             modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
         }
 
-        public static implicit operator System.Data.Entity.DbContext(AppDbContext v)
-        {
-            throw new NotImplementedException();
-        }
+       
     }
 }

@@ -26,7 +26,8 @@ namespace ApiProject.Api
                 .AddJsonFile("appsettings.json", optional: false)
                 .AddJsonFile($"appsettings.{env.EnvironmentName}.json", optional: true);
 
-            builder.Services.AddPersistence(builder.Configuration);
+
+           builder.Services.AddPersistence(builder.Configuration);
             builder.Services.AddApplication();
             builder.Services.AddCustomerMapper();
             var app = builder.Build();
@@ -43,6 +44,7 @@ namespace ApiProject.Api
 
 
             app.MapControllers();
+
 
             app.Run();
         }
