@@ -49,23 +49,23 @@ namespace ApiProject.Persistence.Migrations
                         new
                         {
                             Id = 1,
-                            CreatedDate = new DateTime(2024, 4, 27, 16, 57, 49, 516, DateTimeKind.Local).AddTicks(6825),
+                            CreatedDate = new DateTime(2024, 4, 28, 16, 2, 38, 802, DateTimeKind.Local).AddTicks(3009),
                             IsDeleted = false,
-                            Name = "Ev"
+                            Name = "Kompyuterlər"
                         },
                         new
                         {
                             Id = 2,
-                            CreatedDate = new DateTime(2024, 4, 27, 16, 57, 49, 516, DateTimeKind.Local).AddTicks(6911),
+                            CreatedDate = new DateTime(2024, 4, 28, 16, 2, 38, 802, DateTimeKind.Local).AddTicks(3118),
                             IsDeleted = false,
-                            Name = "Oyuncaqlar & İdman"
+                            Name = "Geyim"
                         },
                         new
                         {
                             Id = 3,
-                            CreatedDate = new DateTime(2024, 4, 27, 16, 57, 49, 516, DateTimeKind.Local).AddTicks(9864),
+                            CreatedDate = new DateTime(2024, 4, 28, 16, 2, 38, 802, DateTimeKind.Local).AddTicks(3128),
                             IsDeleted = true,
-                            Name = "Kompyuterlər"
+                            Name = "Ayyaqqabı & Səhiyyə"
                         });
                 });
 
@@ -101,7 +101,7 @@ namespace ApiProject.Persistence.Migrations
                         new
                         {
                             Id = 1,
-                            CreatedDate = new DateTime(2024, 4, 27, 16, 57, 49, 517, DateTimeKind.Local).AddTicks(3171),
+                            CreatedDate = new DateTime(2024, 4, 28, 16, 2, 38, 802, DateTimeKind.Local).AddTicks(8521),
                             IsDeleted = false,
                             Name = "Elektrik",
                             ParentId = 0,
@@ -110,7 +110,7 @@ namespace ApiProject.Persistence.Migrations
                         new
                         {
                             Id = 2,
-                            CreatedDate = new DateTime(2024, 4, 27, 16, 57, 49, 517, DateTimeKind.Local).AddTicks(3178),
+                            CreatedDate = new DateTime(2024, 4, 28, 16, 2, 38, 802, DateTimeKind.Local).AddTicks(8527),
                             IsDeleted = false,
                             Name = "Moda",
                             ParentId = 0,
@@ -119,7 +119,7 @@ namespace ApiProject.Persistence.Migrations
                         new
                         {
                             Id = 3,
-                            CreatedDate = new DateTime(2024, 4, 27, 16, 57, 49, 517, DateTimeKind.Local).AddTicks(3179),
+                            CreatedDate = new DateTime(2024, 4, 28, 16, 2, 38, 802, DateTimeKind.Local).AddTicks(8528),
                             IsDeleted = false,
                             Name = "Bilgisayar",
                             ParentId = 1,
@@ -128,7 +128,7 @@ namespace ApiProject.Persistence.Migrations
                         new
                         {
                             Id = 4,
-                            CreatedDate = new DateTime(2024, 4, 27, 16, 57, 49, 517, DateTimeKind.Local).AddTicks(3181),
+                            CreatedDate = new DateTime(2024, 4, 28, 16, 2, 38, 802, DateTimeKind.Local).AddTicks(8530),
                             IsDeleted = false,
                             Name = "Qadın",
                             ParentId = 2,
@@ -172,28 +172,28 @@ namespace ApiProject.Persistence.Migrations
                         {
                             Id = 1,
                             CategoryId = 1,
-                            CreatedDate = new DateTime(2024, 4, 27, 16, 57, 49, 520, DateTimeKind.Local).AddTicks(9073),
-                            Description = "Quo voluptates quia rerum iste.",
+                            CreatedDate = new DateTime(2024, 4, 28, 16, 2, 38, 805, DateTimeKind.Local).AddTicks(9256),
+                            Description = "Perferendis voluptatem qui aspernatur et.",
                             IsDeleted = false,
-                            Title = "Ea."
+                            Title = "Facere."
                         },
                         new
                         {
                             Id = 2,
                             CategoryId = 3,
-                            CreatedDate = new DateTime(2024, 4, 27, 16, 57, 49, 520, DateTimeKind.Local).AddTicks(9290),
-                            Description = "Adipisci eum iure enim itaque.",
+                            CreatedDate = new DateTime(2024, 4, 28, 16, 2, 38, 805, DateTimeKind.Local).AddTicks(9484),
+                            Description = "Placeat consectetur et aperiam non.",
                             IsDeleted = true,
-                            Title = "Est."
+                            Title = "Temporibus."
                         },
                         new
                         {
                             Id = 3,
                             CategoryId = 4,
-                            CreatedDate = new DateTime(2024, 4, 27, 16, 57, 49, 520, DateTimeKind.Local).AddTicks(9340),
-                            Description = "Voluptate fuga omnis sed nemo.",
+                            CreatedDate = new DateTime(2024, 4, 28, 16, 2, 38, 805, DateTimeKind.Local).AddTicks(9607),
+                            Description = "Doloribus aut consectetur delectus et.",
                             IsDeleted = false,
-                            Title = "Iure."
+                            Title = "Dolor."
                         });
                 });
 
@@ -239,23 +239,23 @@ namespace ApiProject.Persistence.Migrations
                         {
                             Id = 1,
                             BrandId = 1,
-                            CreatedDate = new DateTime(2024, 4, 27, 16, 57, 49, 524, DateTimeKind.Local).AddTicks(9886),
-                            Description = "The automobile layout consists of a front-engine design, with transaxle-type transmissions mounted at the rear of the engine and four wheel drive",
-                            Discount = 4.212197629638790m,
+                            CreatedDate = new DateTime(2024, 4, 28, 16, 2, 38, 810, DateTimeKind.Local).AddTicks(5181),
+                            Description = "Boston's most advanced compression wear technology increases muscle oxygenation, stabilizes active muscles",
+                            Discount = 8.488637953133320m,
                             IsDeleted = false,
-                            Price = 752.24m,
-                            Title = "İnanılmaz Rezin Beret"
+                            Price = 605.33m,
+                            Title = "Möhtəşəm Polad Sviter"
                         },
                         new
                         {
                             Id = 2,
                             BrandId = 1,
-                            CreatedDate = new DateTime(2024, 4, 27, 16, 57, 49, 525, DateTimeKind.Local).AddTicks(109),
+                            CreatedDate = new DateTime(2024, 4, 28, 16, 2, 38, 810, DateTimeKind.Local).AddTicks(5455),
                             Description = "The automobile layout consists of a front-engine design, with transaxle-type transmissions mounted at the rear of the engine and four wheel drive",
-                            Discount = 5.768720119760420m,
+                            Discount = 4.918328606960130m,
                             IsDeleted = false,
-                            Price = 845.24m,
-                            Title = "Mükəmməl Polad Kompyuter"
+                            Price = 944.66m,
+                            Title = "Fantastik Polad Sviter"
                         });
                 });
 
