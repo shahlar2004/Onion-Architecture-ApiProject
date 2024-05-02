@@ -19,5 +19,7 @@ namespace ApiProject.Application.Interfaces.Repositories
        // Task SoftDeleteasync(T entity);
             
         Task HardDeleteAsync(T entity);
+
+        Task HardRangeDeleteAsync(IList<T> entity);
     }
 }
