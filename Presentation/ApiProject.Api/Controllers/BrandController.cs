@@ -22,7 +22,6 @@ namespace ApiProject.Api.Controllers
         public async Task<IActionResult> GetAllBrands()
         {
             var response = await mediator.Send(new GetAllBrandsQueryRequest());
-
             return Ok(response);
         }
     }
