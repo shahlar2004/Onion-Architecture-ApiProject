@@ -30,8 +30,10 @@ namespace ApiProject.Application.Features.Query.Products.GetAllProducts
             var products = await unitOfWork.GetReadRepoitory<Product>().GetAllAsync(include: x => x.Include(b => b.Brand));
             var map = mapper.Map<List<GetAllProductsQueryResponse>>(products);
 
-
-
+            foreach (var item in map)
+            {
+                item.Price -= (item.Price * item.Discount / 100);
+            }
 
             //List<GetAllProductsQueryResponse> response = new();
 
@@ -48,7 +50,9 @@ namespace ApiProject.Application.Features.Query.Products.GetAllProducts
             //    });
 
             //}
-                return map;
+            //return map;
+
+            throw new Exception("Hada olusdu");
         }
     }
 }
