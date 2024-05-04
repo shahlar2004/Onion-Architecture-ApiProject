@@ -2,13 +2,14 @@
 using ApiProject.Persistence;
 using ApiProject.Mapper;
 using ApiProject.Application;
+using ApiProject.Application.Exceptions;
 
 namespace ApiProject.Api
 
 {
     public class Program
     { 
-        public static void Main(string[] args)
+        public static async void Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
 
@@ -39,6 +40,8 @@ namespace ApiProject.Api
                 app.UseSwagger();
                 app.UseSwaggerUI();
             }
+
+            app.ConfigureExceptionHandlingMiddleware();
 
             app.UseAuthorization();
 
