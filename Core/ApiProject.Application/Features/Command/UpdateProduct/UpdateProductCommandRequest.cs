@@ -15,7 +15,6 @@ namespace ApiProject.Application.Features.Command.UpdateProduct
         public int BrandId { get; set; }
         public decimal Price { get; set; }
         public decimal Discount { get; set; }
-
         public IList<int> CategoryList { get; set; }
     }
 }

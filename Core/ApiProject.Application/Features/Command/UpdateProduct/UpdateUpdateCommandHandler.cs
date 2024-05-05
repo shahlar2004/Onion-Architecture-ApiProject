@@ -23,20 +23,30 @@ namespace ApiProject.Application.Features.Command.UpdateProduct
 
         public async Task Handle(UpdateProductCommandRequest request, CancellationToken cancellationToken)
         {
-            var product = await unitOfWork.GetReadRepoitory<Product>().GetAsync(x=>x.Id==request.Id && !x.IsDeleted);
-            var map=mapper.Map<Product>(request);
-            var productCategories= await unitOfWork.GetReadRepoitory<ProductCategory>().GetAllAsync(x=>x.ProductId==product.Id);
-            await unitOfWork.GetWriteRepostitory<ProductCategory>().HardRangeDeleteAsync(productCategories);
 
-            foreach (var categoryId in request.CategoryList)
-                await unitOfWork.GetWriteRepostitory<ProductCategory>().AddAsync(new()
-                {
-                    CategoryId=categoryId,
-                    ProductId=product.Id,
-                });
+            try
+            {
+                var product = await unitOfWork.GetReadRepoitory<Product>().GetAsync(x => x.Id == request.Id && !x.IsDeleted);
+                var map = mapper.Map<Product>(request);
+                var productCategories = await unitOfWork.GetReadRepoitory<ProductCategory>().GetAllAsync(x => x.ProductId == product.Id);
+                await unitOfWork.GetWriteRepostitory<ProductCategory>().HardRangeDeleteAsync(productCategories);
 
-            await unitOfWork.GetWriteRepostitory<Product>().UpdateAsync(map);
-           await unitOfWork.SaveAsync();
+                foreach (var categoryId in request.CategoryList)
+                    await unitOfWork.GetWriteRepostitory<ProductCategory>().AddAsync(new()
+                    {
+                        CategoryId = categoryId,
+                        ProductId = product.Id,
+                    });
+
+                await unitOfWork.GetWriteRepostitory<Product>().UpdateAsync(map);
+                await unitOfWork.SaveAsync();
+            }
+            catch (Exception)
+            {
+
+                throw new Exception("Olmadi");
+            }
+         
              
         }
     }

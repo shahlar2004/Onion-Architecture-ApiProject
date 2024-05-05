@@ -34,7 +34,6 @@ namespace ApiProject.Application.Exceptions
 			{
 			 exception.Message,
 			 exception.InnerException?.ToString(),
-			 exception.InnerException.ToString()
 
 			};
 
