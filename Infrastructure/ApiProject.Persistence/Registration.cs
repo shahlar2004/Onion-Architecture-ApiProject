@@ -21,8 +21,8 @@ namespace ApiProject.Persistence
 
         public static void AddPersistence(this IServiceCollection service, IConfiguration config)
         {
-            service.AddDbContext<AppDbContext>(opt => opt.UseSqlServer(config.GetConnectionString("DefaultConnection")));
             service.AddScoped(typeof(IReadRepository<>),typeof(ReadRepository<>));
+            service.AddDbContext<AppDbContext>(opt => opt.UseSqlServer(config.GetConnectionString("DefaultConnection")));
             service.AddScoped<IUnitOfWork, UnitOfWork>();  
         }
     }

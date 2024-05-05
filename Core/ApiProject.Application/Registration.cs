@@ -15,11 +15,15 @@ namespace ApiProject.Application
         {
             var assembly= Assembly.GetExecutingAssembly();
             services.AddMediatR(cfg=>cfg.RegisterServicesFromAssembly(assembly));
+<<<<<<< HEAD
 <<<<<<< Updated upstream
 =======
             services.AddAutoMapper(assembly);
             services.AddTransient<ExceptionMiddleware>();
 >>>>>>> Stashed changes
+=======
+            services.AddAutoMapper(assembly);
+>>>>>>> 8fba26498a90775508bd2bc25a569296d68046dc
         }
     }
 }
