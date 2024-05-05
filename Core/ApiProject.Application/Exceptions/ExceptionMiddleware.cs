@@ -33,11 +33,8 @@ namespace ApiProject.Application.Exceptions
 			List<string> errors = new()  
 			{
 			 exception.Message,
-<<<<<<< HEAD
-			 exception.InnerException?.ToString()
-=======
+			 exception.InnerException?.ToString(),
 			 exception.InnerException.ToString()
->>>>>>> 8fba26498a90775508bd2bc25a569296d68046dc
 
 			};
 
