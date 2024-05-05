@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using ApiProject.Application.Exceptions;
+using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,6 +15,11 @@ namespace ApiProject.Application
         {
             var assembly= Assembly.GetExecutingAssembly();
             services.AddMediatR(cfg=>cfg.RegisterServicesFromAssembly(assembly));
+<<<<<<< Updated upstream
+=======
+            services.AddAutoMapper(assembly);
+            services.AddTransient<ExceptionMiddleware>();
+>>>>>>> Stashed changes
         }
     }
 }
