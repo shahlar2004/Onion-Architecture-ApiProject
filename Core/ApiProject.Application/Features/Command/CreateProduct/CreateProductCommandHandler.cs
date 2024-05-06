@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace ApiProject.Application.Features.Command.CreateProduct
 {
-    public class CreateProductCommandHandler : IRequestHandler<CreateProductCommandRequest>
+    public class CreateProductCommandHandler : IRequestHandler<CreateProductCommandRequest,Unit>
     {
         private readonly IUnitOfWork unitOfWork;
 
@@ -17,7 +17,7 @@ namespace ApiProject.Application.Features.Command.CreateProduct
         {
             this.unitOfWork = unitOfWork;
         }
-        public async Task Handle(CreateProductCommandRequest request, CancellationToken cancellationToken)
+        public async Task<Unit> Handle(CreateProductCommandRequest request, CancellationToken cancellationToken)
         {
             Product product = new(request.Title,request.Description,request.BrandId,request.Price,request.Discount);
              await unitOfWork.GetWriteRepostitory<Product>().AddAsync(product);
@@ -35,6 +35,8 @@ namespace ApiProject.Application.Features.Command.CreateProduct
 
                 await unitOfWork.SaveAsync();
             }
+
+            return Unit.Value;
 
 
         }
