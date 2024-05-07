@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace ApiProject.Application.Interfaces.UnitOfWorks
 {
-    public interface IUnitOfWork:IAsyncDisposable
+    public interface IUnitOfWork : IAsyncDisposable
     {
         IReadRepository<T> GetReadRepoitory<T>() where T : class, IEntitieBase, new();
         IWriteRepostitory<T> GetWriteRepostitory<T>() where T: class, IEntitieBase, new();

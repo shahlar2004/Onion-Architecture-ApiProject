@@ -5,11 +5,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ApiProject.Application.Features.Command.UpdateProduct
+namespace ApiProject.Application.Features.Products.Command.UpdateProduct
 {
-    public class UpdateProductCommandRequest:IRequest
+    public class UpdateProductCommandRequest : IRequest
     {
-        public int Id {  get; set; }    
+        public int Id { get; set; }
         public string Title { get; set; }
         public string Description { get; set; }
         public int BrandId { get; set; }

@@ -12,7 +12,7 @@ using System.Text;
 using System.Threading.Tasks;
 using AutoMapper;
 
-namespace ApiProject.Application.Features.Query.Products.GetAllProducts
+namespace ApiProject.Application.Features.Products.Query.Products.GetAllProducts
 {
     public class GetAllProductsQueryHandler : IRequestHandler<GetAllProductsQueryRequest, IList<GetAllProductsQueryResponse>>
     {
@@ -32,7 +32,7 @@ namespace ApiProject.Application.Features.Query.Products.GetAllProducts
 
             foreach (var item in map)
             {
-                item.Price -= (item.Price * item.Discount / 100);
+                item.Price -= item.Price * item.Discount / 100;
             }
 
             //List<GetAllProductsQueryResponse> response = new();
@@ -52,7 +52,7 @@ namespace ApiProject.Application.Features.Query.Products.GetAllProducts
             //}
             return map;
 
-           // throw new Exception("Hada olusdu");
+            // throw new Exception("Hada olusdu");
         }
     }
 }

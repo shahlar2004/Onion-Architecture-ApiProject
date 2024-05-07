@@ -1,7 +1,7 @@
-﻿using ApiProject.Application.Features.Command.CreateProduct;
-using ApiProject.Application.Features.Command.DeleteProduct;
-using ApiProject.Application.Features.Command.UpdateProduct;
-using ApiProject.Application.Features.Query.Products.GetAllProducts;
+﻿using ApiProject.Application.Features.Products.Command.CreateProduct;
+using ApiProject.Application.Features.Products.Command.DeleteProduct;
+using ApiProject.Application.Features.Products.Command.UpdateProduct;
+using ApiProject.Application.Features.Products.Query.Products.GetAllProducts;
 using MediatR;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;

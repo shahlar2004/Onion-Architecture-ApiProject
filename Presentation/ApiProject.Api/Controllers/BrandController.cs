@@ -1,4 +1,4 @@
-﻿using ApiProject.Application.Features.Query.Brands.GetAllBrands;
+﻿using ApiProject.Application.Features.Brands.Query.Brands.GetAllBrands;
 using AutoMapper;
 using MediatR;
 using Microsoft.AspNetCore.Http;

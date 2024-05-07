@@ -20,4 +20,8 @@
     <ProjectReference Include="..\ApiProject.Domain\ApiProject.Domain.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Features\Brands\Command\" />
+  </ItemGroup>
+
 </Project>

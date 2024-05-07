@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ApiProject.Application.Features.Query.Brands.GetAllBrands
+namespace ApiProject.Application.Features.Brands.Query.Brands.GetAllBrands
 {
     public class GetAllBrandsQueryResponse
     {
-        public string Name { get; set; }    
+        public string Name { get; set; }
     }
 }

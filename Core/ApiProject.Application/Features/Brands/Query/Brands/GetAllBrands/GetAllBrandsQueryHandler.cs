@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ApiProject.Application.Features.Query.Brands.GetAllBrands
+namespace ApiProject.Application.Features.Brands.Query.Brands.GetAllBrands
 {
     public class GetAllBrandsQueryHandler : IRequestHandler<GetAllBrandsQueryRequest, IList<GetAllBrandsQueryResponse>>
     {
@@ -33,7 +33,7 @@ namespace ApiProject.Application.Features.Query.Brands.GetAllBrands
                 });
             }
 
-            return responses;   
+            return responses;
         }
     }
 }
