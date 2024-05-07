@@ -10,7 +10,6 @@ namespace ApiProject.Application.Features.Products.Exceptions
     public class ProductTitleMustNotBeSameException:BaseExceptions
     {
         public ProductTitleMustNotBeSameException() : base("Məhsul bağlığı artıq mövcuddur") { }
-     
     }
 }
     
