@@ -2,6 +2,7 @@
 using ApiProject.Persistence;
 using ApiProject.Mapper;
 using ApiProject.Application;
+using ApiProject.Infrastructure;
 using ApiProject.Application.Exceptions;
 
 namespace ApiProject.Api
@@ -29,6 +30,7 @@ namespace ApiProject.Api
 
 
            builder.Services.AddPersistence(builder.Configuration);
+            builder.Services.AddInfrastructure(builder.Configuration);
             builder.Services.AddApplication();
             builder.Services.AddCustomerMapper();
             var app = builder.Build();
