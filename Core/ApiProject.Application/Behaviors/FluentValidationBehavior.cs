@@ -21,16 +21,16 @@ namespace ApiProject.Application.Behaviors
         public Task<TResponse> Handle(TRequest request, RequestHandlerDelegate<TResponse> next, CancellationToken cancellationToken)
         {
             var context = new ValidationContext<TRequest>(request);
-            var failtures=validator.Select(v=>v.Validate(context))
+            var failures=validator.Select(v=>v.Validate(context))
                 .SelectMany(result=>result.Errors)
                 .GroupBy(x=>x.ErrorMessage)
                 .Select(x=>x.First())
                 .Where(f=>f !=null)
                 .ToList();
 
-            if (failtures.Any())
+            if (failures.Any())
             {
-                throw new ValidationException(failtures);
+                throw new ValidationException(failures);
             }
 
             return next();

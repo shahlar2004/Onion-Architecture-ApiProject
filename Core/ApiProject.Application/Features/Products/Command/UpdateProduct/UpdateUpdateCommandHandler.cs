@@ -10,44 +10,43 @@ using System.Threading.Tasks;
 
 namespace ApiProject.Application.Features.Products.Command.UpdateProduct
 {
-    public class UpdateUpdateCommandHandler : IRequestHandler<UpdateProductCommandRequest>
+    public class UpdateUpdateCommandHandler : IRequestHandler<UpdateProductCommandRequest,Unit>
     {
         private readonly IUnitOfWork unitOfWork;
         private readonly IMapper mapper;
 
+      
         public UpdateUpdateCommandHandler(IUnitOfWork unitOfWork, IMapper mapper)
         {
             this.unitOfWork = unitOfWork;
             this.mapper = mapper;
         }
 
-        public async Task Handle(UpdateProductCommandRequest request, CancellationToken cancellationToken)
+        public async Task<Unit> Handle(UpdateProductCommandRequest request, CancellationToken cancellationToken)
         {
 
-            try
-            {
-                var product = await unitOfWork.GetReadRepoitory<Product>().GetAsync(x => x.Id == request.Id && !x.IsDeleted);
-                var map = mapper.Map<Product>(request);
-                var productCategories = await unitOfWork.GetReadRepoitory<ProductCategory>().GetAllAsync(x => x.ProductId == product.Id);
-                await unitOfWork.GetWriteRepostitory<ProductCategory>().HardRangeDeleteAsync(productCategories);
+            var product = await unitOfWork.GetReadRepoitory<Product>().GetAsync(x => x.Id == request.Id && !x.IsDeleted);
+            var map = mapper.Map<Product>(request);
+            var productCategories = await unitOfWork.GetReadRepoitory<ProductCategory>().GetAllAsync(x => x.ProductId == product.Id);
+            await unitOfWork.GetWriteRepostitory<ProductCategory>().HardRangeDeleteAsync(productCategories);
 
-                foreach (var categoryId in request.CategoryList)
-                    await unitOfWork.GetWriteRepostitory<ProductCategory>().AddAsync(new()
-                    {
-                        CategoryId = categoryId,
-                        ProductId = product.Id,
-                    });
+            foreach (var categoryId in request.CategoryList)
+                await unitOfWork.GetWriteRepostitory<ProductCategory>().AddAsync(new()
+                {
+                    CategoryId = categoryId,
+                    ProductId = product.Id,
+                });
 
-                await unitOfWork.GetWriteRepostitory<Product>().UpdateAsync(map);
-                await unitOfWork.SaveAsync();
-            }
-            catch (Exception)
-            {
+            await unitOfWork.GetWriteRepostitory<Product>().UpdateAsync(map);
+            await unitOfWork.SaveAsync();
 
-                throw new Exception("Olmadi");
-            }
-
+            return Unit.Value;
 
         }
+
+        //Task IRequestHandler<UpdateProductCommandRequest>.Handle(UpdateProductCommandRequest request, CancellationToken cancellationToken)
+        //{
+        //    throw new NotImplementedException();
+        //}
     }
 }

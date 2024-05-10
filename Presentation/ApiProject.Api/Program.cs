@@ -4,6 +4,7 @@ using ApiProject.Mapper;
 using ApiProject.Application;
 using ApiProject.Infrastructure;
 using ApiProject.Application.Exceptions;
+using Microsoft.OpenApi.Models;
 
 namespace ApiProject.Api
 
@@ -29,10 +30,43 @@ namespace ApiProject.Api
                 .AddJsonFile($"appsettings.{env.EnvironmentName}.json", optional: true);
 
 
-           builder.Services.AddPersistence(builder.Configuration);
+            builder.Services.AddPersistence(builder.Configuration);
             builder.Services.AddInfrastructure(builder.Configuration);
             builder.Services.AddApplication();
             builder.Services.AddCustomerMapper();
+
+
+            builder.Services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1",new OpenApiInfo { Title="Project API", Version="v1", Description="Project API swagger client" });
+                c.AddSecurityDefinition("Bearer",new OpenApiSecurityScheme()
+                {
+                    Name="Authorization",
+                    Type=SecuritySchemeType.ApiKey,
+                    Scheme= "Bearer",
+                    BearerFormat= "JWT",
+                    In= ParameterLocation.Header,
+                    Description= @"'Bearer' yaz?b bo?luq buraxd?qdan sonra Token'i gir?bil?rsiz "
+                });
+
+                c.AddSecurityRequirement(new OpenApiSecurityRequirement()
+                {
+                    {
+                        new OpenApiSecurityScheme
+                        {
+                            Reference= new OpenApiReference
+                            {
+                                Type= ReferenceType.SecurityScheme,
+                                Id="Bearer"
+                            }
+                        },
+
+                        Array.Empty<string>()
+                    }
+                });
+            });
+
+
             var app = builder.Build();
 
 
@@ -44,13 +78,8 @@ namespace ApiProject.Api
             }
 
             app.ConfigureExceptionHandlingMiddleware();
-
             app.UseAuthorization();
-
-
             app.MapControllers();
-
-
             app.Run();
         }
     }

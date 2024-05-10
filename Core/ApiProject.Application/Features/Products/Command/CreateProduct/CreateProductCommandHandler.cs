@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace ApiProject.Application.Features.Products.Command.CreateProduct
 {
-    public class CreateProductCommandHandler : IRequestHandler<CreateProductCommandRequest, Unit>
+    public class CreateProductCommandHandler : IRequestHandler<CreateProductCommandRequest,Unit>
     {
         private readonly IUnitOfWork unitOfWork;
         private readonly ProductRules productRules;

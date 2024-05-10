@@ -50,9 +50,9 @@ namespace ApiProject.Application.Features.Products.Query.Products.GetAllProducts
             //    });
 
             //}
-            return map;
+            //return map;
 
-            // throw new Exception("Hada olusdu");
+             throw new Exception("Hada olusdu");
         }
     }
 }

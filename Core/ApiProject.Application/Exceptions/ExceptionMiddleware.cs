@@ -12,24 +12,32 @@ namespace ApiProject.Application.Exceptions
 {
     public class ExceptionMiddleware : IMiddleware
     {
-        public async Task InvokeAsync(HttpContext httpContext, RequestDelegate next)
+
+        public async Task InvokeAsync(HttpContext context, RequestDelegate next)
         {
 			try
 			{
-				await next(httpContext);
+				await next(context);
 			}
 			catch (Exception ex)
 			{
-				await HandleExceptionAsync(httpContext, ex);
+
+				await HandleExceptionAsync(context, ex);
 			}
         }
 
-		private static Task HandleExceptionAsync(HttpContext httpContext, Exception exception)
+
+
+        private static Task HandleExceptionAsync(HttpContext httpContext, Exception exception)
 		{
-			int statusCode = GetStatusCode(exception);
+			//int statusCode = GetStatusCode(exception);
+			//httpContext.Response.ContentType = "application/json";
+			//httpContext.Response.StatusCode = statusCode;
+			
+
+			int statusCode= GetStatusCode(exception);
 			httpContext.Response.ContentType = "application/json";
 			httpContext.Response.StatusCode = statusCode;
-
 
 
 			if (exception.GetType()== typeof(ValidationException))
@@ -53,6 +61,9 @@ namespace ApiProject.Application.Exceptions
 
 		}
 
+
+		
+
 		private static int GetStatusCode(Exception exception) =>
            exception switch
 			{
@@ -61,5 +72,7 @@ namespace ApiProject.Application.Exceptions
 				ValidationException => StatusCodes.Status422UnprocessableEntity,
 				_=> StatusCodes.Status500InternalServerError
 			};
+
+      
     }
 }
