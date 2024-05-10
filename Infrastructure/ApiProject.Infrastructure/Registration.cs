@@ -17,29 +17,28 @@ namespace ApiProject.Infrastructure
 
         public static void AddInfrastructure(this IServiceCollection service, IConfiguration config)
         {
-          service.Configure<TokenSettings>(config.GetSection("JWT"));
+            service.Configure<TokenSettings>(config.GetSection("JWT"));
+            //service.AddTransient<ITokenService, TokenService>();
 
-            service.AddTransient<ITokenService, TokenService>();
-
-            service.AddAuthentication(opt =>
-            {
-                opt.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
-                opt.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
-            }).AddJwtBearer(JwtBearerDefaults.AuthenticationScheme, opt =>
-            {
-                opt.SaveToken = true;
-                opt.TokenValidationParameters = new TokenValidationParameters()
-                {
-                    ValidateIssuer = false,
-                    ValidateAudience = false,
-                    ValidateIssuerSigningKey = true,
-                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(config["JWT:Secret"])),
-                    ValidateLifetime = false,
-                    ValidIssuer = config["JWT:Secret"],
-                    ValidAudience = config["JWT:Secret"],
-                    ClockSkew = TimeSpan.Zero
-                };
-            }) ;
+            //service.AddAuthentication(opt =>
+            //{
+            //    opt.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+            //    opt.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+            //}).AddJwtBearer(JwtBearerDefaults.AuthenticationScheme, opt =>
+            //{
+            //    opt.SaveToken = true;
+            //    opt.TokenValidationParameters = new TokenValidationParameters()
+            //    {
+            //        ValidateIssuer = false,
+            //        ValidateAudience = false,
+            //        ValidateIssuerSigningKey = true,
+            //        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(config["JWT:Secret"])),
+            //        ValidateLifetime = false,
+            //        ValidIssuer = config["JWT:Secret"],
+            //        ValidAudience = config["JWT:Secret"],
+            //        ClockSkew = TimeSpan.Zero
+            //    };
+            //}) ;
         }   
     }
 }

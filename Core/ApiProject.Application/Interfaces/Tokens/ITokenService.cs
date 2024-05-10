@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace ApiProject.Application.Interfaces.Tokens
 {
-    public interface ITokenService
+    public  interface ITokenService 
     {
         Task<JwtSecurityToken> CreateToken(User user, IList<string> roles);
         string GenerateRefreshToken();
