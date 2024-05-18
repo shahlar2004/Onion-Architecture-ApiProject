@@ -8,6 +8,7 @@ using Microsoft.OpenApi.Models;
 using ApiProject.Application.Interfaces.Tokens;
 using ApiProject.Infrastructure.Tokens;
 
+
 namespace ApiProject.Api
 
 {
@@ -38,38 +39,37 @@ namespace ApiProject.Api
             builder.Services.AddCustomerMapper();
 
 
-            //builder.Services.AddSwaggerGen(c =>
-            //{
-            //    c.SwaggerDoc("v1",new OpenApiInfo { Title="Project API", Version="v1", Description="Project API swagger client" });
-            //    c.AddSecurityDefinition("Bearer",new OpenApiSecurityScheme()
-            //    {
-            //        Name="Authorization",
-            //        Type=SecuritySchemeType.ApiKey,
-            //        Scheme= "Bearer",
-            //        BearerFormat= "JWT",
-            //        In= ParameterLocation.Header,
-            //        Description= @"'Bearer' yazıb boşluq buraxdıqdan sonra Token'i girəbilərsiz "
-            //    });
+            builder.Services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "Project API", Version = "v1", Description = "Project API swagger client" });
+                c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme()
+                {
+                    Name = "Authorization",
+                    Type = SecuritySchemeType.ApiKey,
+                    Scheme = "Bearer",
+                    BearerFormat = "JWT",
+                    In = ParameterLocation.Header,
+                    Description = @"'Bearer' yazıb boşluq buraxdıqdan sonra Token'i girəbilərsiz "
+                });
 
-            //    c.AddSecurityRequirement(new OpenApiSecurityRequirement()
-            //    {
-            //        {
-            //            new OpenApiSecurityScheme
-            //            {
-            //                Reference= new OpenApiReference
-            //                {
-            //                    Type= ReferenceType.SecurityScheme,
-            //                    Id="Bearer"
-            //                }
-            //            },
+                c.AddSecurityRequirement(new OpenApiSecurityRequirement()
+                    {
+                        {
+                            new OpenApiSecurityScheme
+                            {
+                                Reference= new OpenApiReference
+                                {
+                                    Type= ReferenceType.SecurityScheme,
+                                    Id="Bearer"
+                                }
+                            },
 
-            //            Array.Empty<string>()
-            //        }
-            //    });
-            //});
+                            Array.Empty<string>()
+                        }
+                    });
+            });
 
 
-         //builder.Services.AddTransient<ITokenService, TokenService>();
 
             var app = builder.Build();
 
