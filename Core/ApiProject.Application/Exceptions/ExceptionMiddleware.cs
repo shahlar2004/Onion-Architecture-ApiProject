@@ -46,7 +46,7 @@ namespace ApiProject.Application.Exceptions
 				{
 					Errors = ((ValidationException)exception).Errors.Select(x=>x.ErrorMessage),
 					StatusCode = StatusCodes.Status400BadRequest,
-				}.ToString()); ;
+				}.ToString());
 			}
 
 			List<string> errors = new()  
@@ -60,6 +60,7 @@ namespace ApiProject.Application.Exceptions
 			}.ToString());
 
 		}
+
 
 
 		

@@ -25,7 +25,7 @@ namespace ApiProject.Application.Behaviors
                 .SelectMany(result=>result.Errors)
                 .GroupBy(x=>x.ErrorMessage)
                 .Select(x=>x.First())
-                .Where(f=>f !=null)
+                .Where(f=>f!=null)
                 .ToList();
 
             if (failures.Any())

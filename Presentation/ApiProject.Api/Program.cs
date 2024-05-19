@@ -7,6 +7,9 @@ using ApiProject.Application.Exceptions;
 using Microsoft.OpenApi.Models;
 using ApiProject.Application.Interfaces.Tokens;
 using ApiProject.Infrastructure.Tokens;
+using Microsoft.AspNetCore.Identity;
+using ApiProject.Domain.Entities;
+using ApiProject.Persistence.Context;
 
 
 namespace ApiProject.Api
@@ -25,6 +28,9 @@ namespace ApiProject.Api
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
 
+            builder.Services.AddHttpContextAccessor();
+            builder.Services.AddSingleton<IHttpContextAccessor,HttpContextAccessor>();
+
 
             var env = builder.Environment;
 
@@ -36,6 +42,10 @@ namespace ApiProject.Api
             builder.Services.AddPersistence(builder.Configuration);
             builder.Services.AddInfrastructure(builder.Configuration);
             builder.Services.AddApplication();
+
+            builder.Services.AddIdentity<User, Role>()
+            .AddEntityFrameworkStores<AppDbContext>()
+            .AddDefaultTokenProviders();
             builder.Services.AddCustomerMapper();
 
 

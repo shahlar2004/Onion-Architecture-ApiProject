@@ -24,12 +24,14 @@ namespace ApiProject.Application
             services.AddMediatR(cfg=>cfg.RegisterServicesFromAssembly(assembly));
             services.AddAutoMapper(assembly);
             services.AddTransient<ExceptionMiddleware>();
-            services.AddAutoMapper(assembly);
             services.AddValidatorsFromAssembly(assembly);
             services.AddRulesFromAssemblyContaining(assembly,typeof(BaseRules));
             services.AddTransient<ProductRules>();
             ValidatorOptions.Global.LanguageManager.Culture= new CultureInfo("az");
             services.AddTransient(typeof(IPipelineBehavior<,>), typeof(FluentValidationBehavior<,>));
+
+
+   
         }
 
         private static IServiceCollection AddRulesFromAssemblyContaining(this IServiceCollection services, Assembly assembly,Type type)
@@ -37,9 +39,7 @@ namespace ApiProject.Application
             var types= assembly.GetTypes().Where(t=>t.IsSubclassOf(type) && type!=t).ToList();
             foreach (var item in types)
                 services.AddTransient(item);
-
             return services;
-            
         }
     }
 }

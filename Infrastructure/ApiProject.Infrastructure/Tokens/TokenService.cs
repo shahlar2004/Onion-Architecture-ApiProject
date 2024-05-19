@@ -22,7 +22,7 @@ namespace ApiProject.Infrastructure.Tokens
 
       
 
-        public TokenService(IOptions<TokenSettings> options)
+        public TokenService(UserManager<User> userManager,IOptions<TokenSettings> options)
         {
            tokenSettings = options.Value;
            this.userManager = userManager;
