@@ -22,7 +22,7 @@ namespace ApiProject.Application.Features.Auth.Command.Register
         private readonly UserManager<User> userManager;
         private readonly RoleManager<Role> roleManager;
 
-        public RegisterCommandHandler(UserManager<User> userManager, RoleManager<Role> roleManager,IMapper mapper, IUnitOfWork unitOfWork, IHttpContextAccessor httpContextAccessor) : base(mapper, unitOfWork, httpContextAccessor)
+        public RegisterCommandHandler(AuthRules authRules,UserManager<User> userManager, RoleManager<Role> roleManager,IMapper mapper, IUnitOfWork unitOfWork, IHttpContextAccessor httpContextAccessor) : base(mapper, unitOfWork, httpContextAccessor)
         {
             this.authRules = authRules;
             this.userManager = userManager;
@@ -50,6 +50,7 @@ namespace ApiProject.Application.Features.Auth.Command.Register
                     ConcurrencyStamp = Guid.NewGuid().ToString(),
                 });
             }
+
 
             return Unit.Value;
 

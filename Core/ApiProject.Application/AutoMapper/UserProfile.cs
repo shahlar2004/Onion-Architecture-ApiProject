@@ -13,7 +13,7 @@ namespace ApiProject.Application.AutoMapper
     {
         public UserProfile()
         {
-            CreateMap<RegisterCommandHandler,User>().ReverseMap();
+            CreateMap<User,RegisterCommandRequest> ().ReverseMap();
         }
     }
 }

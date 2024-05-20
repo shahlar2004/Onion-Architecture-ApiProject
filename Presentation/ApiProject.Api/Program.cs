@@ -43,7 +43,12 @@ namespace ApiProject.Api
             builder.Services.AddInfrastructure(builder.Configuration);
             builder.Services.AddApplication();
 
-            builder.Services.AddIdentity<User, Role>()
+            builder.Services.AddIdentity<User, Role>(opt =>
+            {
+                opt.Password.RequireNonAlphanumeric = false;
+                opt.Password.RequireLowercase = false;
+                opt.Password.RequireUppercase = false;
+            })
             .AddEntityFrameworkStores<AppDbContext>()
             .AddDefaultTokenProviders();
             builder.Services.AddCustomerMapper();

@@ -1,6 +1,7 @@
 ﻿using ApiProject.Application.Bases;
 using ApiProject.Application.Behaviors;
 using ApiProject.Application.Exceptions;
+using ApiProject.Application.Features.Auth.Rules;
 using ApiProject.Application.Features.Products.Rules;
 using FluentValidation;
 using MediatR;
@@ -27,6 +28,7 @@ namespace ApiProject.Application
             services.AddValidatorsFromAssembly(assembly);
             services.AddRulesFromAssemblyContaining(assembly,typeof(BaseRules));
             services.AddTransient<ProductRules>();
+            services.AddTransient<AuthRules>();
             ValidatorOptions.Global.LanguageManager.Culture= new CultureInfo("az");
             services.AddTransient(typeof(IPipelineBehavior<,>), typeof(FluentValidationBehavior<,>));
 
