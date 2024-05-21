@@ -18,5 +18,11 @@ namespace ApiProject.Application.Features.Auth.Rules
           
             return Task.CompletedTask;
         }
+
+        public Task EmailOrPasswordShouldNotBeInvalid(User? user, bool checkPassword)
+        {
+            if(user is null || !checkPassword) throw new EmailOrPasswordShouldBeNotInvalidException();
+            return Task.CompletedTask;
+        }
     }
 }

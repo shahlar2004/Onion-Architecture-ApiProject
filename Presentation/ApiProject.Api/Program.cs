@@ -51,8 +51,11 @@ namespace ApiProject.Api
             })
             .AddEntityFrameworkStores<AppDbContext>()
             .AddDefaultTokenProviders();
+
             builder.Services.AddCustomerMapper();
 
+            builder.Services.AddAuthentication();
+            builder.Services.AddAuthorization();
 
             builder.Services.AddSwaggerGen(c =>
             {

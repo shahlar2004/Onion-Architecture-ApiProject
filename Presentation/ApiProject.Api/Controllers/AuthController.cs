@@ -1,4 +1,5 @@
-﻿using ApiProject.Application.Features.Auth.Command.Register;
+﻿using ApiProject.Application.Features.Auth.Command.Login;
+using ApiProject.Application.Features.Auth.Command.Register;
 using MediatR;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -18,10 +19,19 @@ namespace ApiProject.Api.Controllers
 
         [HttpPost]
 
-        public async Task<IActionResult> Register(RegisterCommandRequest requrst)
+        public async Task<IActionResult> Register(RegisterCommandRequest request)
         {
-            await mediator.Send(requrst);
+            await mediator.Send(request);
             return StatusCode(StatusCodes.Status201Created);
         }
+
+        [HttpPost]
+        public async Task<IActionResult> Login(LoginCommandRequest request)
+        {
+            var response=await mediator.Send(request);
+            return StatusCode(StatusCodes.Status200OK,response);
+        }
+
+
     }
 }
