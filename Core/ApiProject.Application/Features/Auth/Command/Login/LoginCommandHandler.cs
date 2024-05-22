@@ -63,7 +63,6 @@ namespace ApiProject.Application.Features.Auth.Command.Login
                 Token = _token,
                 RefreshToken=refreshToken,
                 Expiration=token.ValidTo
-
             };
 
 
