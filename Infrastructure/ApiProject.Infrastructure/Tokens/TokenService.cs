@@ -54,7 +54,6 @@ namespace ApiProject.Infrastructure.Tokens
                 );
 
             await userManager.AddClaimsAsync(user, claims);
-
             return token;
 
         }
