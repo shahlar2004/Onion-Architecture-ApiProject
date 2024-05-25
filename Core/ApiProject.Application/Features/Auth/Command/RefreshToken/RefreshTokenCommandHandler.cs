@@ -24,7 +24,7 @@ namespace ApiProject.Application.Features.Auth.Command.RefreshToken
         private readonly ITokenService tokenService;
 
 
-        public RefreshTokenCommandHandler(UserManager<User> userManagerç,AuthRules authRules, IMapper mapper, IUnitOfWork unitOfWork, IHttpContextAccessor httpContextAccessor, ITokenService tokenService) : base(mapper, unitOfWork, httpContextAccessor)
+        public RefreshTokenCommandHandler(UserManager<User> userManager,AuthRules authRules, IMapper mapper, IUnitOfWork unitOfWork, IHttpContextAccessor httpContextAccessor, ITokenService tokenService) : base(mapper, unitOfWork, httpContextAccessor)
         {
             this.userManager = userManager;
             this.authRules = authRules;

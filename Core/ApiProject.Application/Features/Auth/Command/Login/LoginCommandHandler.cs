@@ -46,10 +46,10 @@ namespace ApiProject.Application.Features.Auth.Command.Login
 
             string refreshToken = tokenService.GenerateRefreshToken();
 
-            _ = int.TryParse(configuration["RefreshTokenValidityInDays"], out int refreshTokenValidityInDays);
+         //   _ = int.TryParse(configuration["RefreshTokenValidityInDays"], out int refreshTokenValidityInDays);
 
             user.RefreshToken = refreshToken;
-            user.RefreshTokenExpiryTime= DateTime.Now.AddDays(refreshTokenValidityInDays);
+            user.RefreshTokenExpiryTime= DateTime.Now.AddDays(60);
 
             await userManager.UpdateAsync(user);
             await userManager.UpdateSecurityStampAsync(user);

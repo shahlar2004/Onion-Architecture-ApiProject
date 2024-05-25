@@ -81,7 +81,6 @@ namespace ApiProject.Infrastructure.Tokens
             JwtSecurityTokenHandler tokenHandler = new();
             var principal = tokenHandler.ValidateToken(token, tokenValidationParameters, out SecurityToken securityToken);
 
-
             if (securityToken is not JwtSecurityToken jwtSecurityToken || !jwtSecurityToken.Header.Alg.Equals(SecurityAlgorithms.HmacSha256, StringComparison.InvariantCultureIgnoreCase))
                 throw new SecurityTokenException("Token Tapilmadi...");
 
