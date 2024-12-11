@@ -49,23 +49,23 @@ namespace ApiProject.Persistence.Migrations
                         new
                         {
                             Id = 1,
-                            CreatedDate = new DateTime(2024, 4, 28, 16, 2, 38, 802, DateTimeKind.Local).AddTicks(3009),
+                            CreatedDate = new DateTime(2024, 5, 7, 13, 19, 22, 199, DateTimeKind.Local).AddTicks(814),
                             IsDeleted = false,
-                            Name = "Kompyuterlər"
+                            Name = "Geyim, İdman & Filmlər"
                         },
                         new
                         {
                             Id = 2,
-                            CreatedDate = new DateTime(2024, 4, 28, 16, 2, 38, 802, DateTimeKind.Local).AddTicks(3118),
+                            CreatedDate = new DateTime(2024, 5, 7, 13, 19, 22, 199, DateTimeKind.Local).AddTicks(966),
                             IsDeleted = false,
-                            Name = "Geyim"
+                            Name = "bəzək, Elektronika & Oyuncaqlar"
                         },
                         new
                         {
                             Id = 3,
-                            CreatedDate = new DateTime(2024, 4, 28, 16, 2, 38, 802, DateTimeKind.Local).AddTicks(3128),
+                            CreatedDate = new DateTime(2024, 5, 7, 13, 19, 22, 199, DateTimeKind.Local).AddTicks(983),
                             IsDeleted = true,
-                            Name = "Ayyaqqabı & Səhiyyə"
+                            Name = "Elektronika, Səhiyyə & Filmlər"
                         });
                 });
 
@@ -101,7 +101,7 @@ namespace ApiProject.Persistence.Migrations
                         new
                         {
                             Id = 1,
-                            CreatedDate = new DateTime(2024, 4, 28, 16, 2, 38, 802, DateTimeKind.Local).AddTicks(8521),
+                            CreatedDate = new DateTime(2024, 5, 7, 13, 19, 22, 199, DateTimeKind.Local).AddTicks(4561),
                             IsDeleted = false,
                             Name = "Elektrik",
                             ParentId = 0,
@@ -110,7 +110,7 @@ namespace ApiProject.Persistence.Migrations
                         new
                         {
                             Id = 2,
-                            CreatedDate = new DateTime(2024, 4, 28, 16, 2, 38, 802, DateTimeKind.Local).AddTicks(8527),
+                            CreatedDate = new DateTime(2024, 5, 7, 13, 19, 22, 199, DateTimeKind.Local).AddTicks(4566),
                             IsDeleted = false,
                             Name = "Moda",
                             ParentId = 0,
@@ -119,7 +119,7 @@ namespace ApiProject.Persistence.Migrations
                         new
                         {
                             Id = 3,
-                            CreatedDate = new DateTime(2024, 4, 28, 16, 2, 38, 802, DateTimeKind.Local).AddTicks(8528),
+                            CreatedDate = new DateTime(2024, 5, 7, 13, 19, 22, 199, DateTimeKind.Local).AddTicks(4567),
                             IsDeleted = false,
                             Name = "Bilgisayar",
                             ParentId = 1,
@@ -128,7 +128,7 @@ namespace ApiProject.Persistence.Migrations
                         new
                         {
                             Id = 4,
-                            CreatedDate = new DateTime(2024, 4, 28, 16, 2, 38, 802, DateTimeKind.Local).AddTicks(8530),
+                            CreatedDate = new DateTime(2024, 5, 7, 13, 19, 22, 199, DateTimeKind.Local).AddTicks(4568),
                             IsDeleted = false,
                             Name = "Qadın",
                             ParentId = 2,
@@ -172,28 +172,28 @@ namespace ApiProject.Persistence.Migrations
                         {
                             Id = 1,
                             CategoryId = 1,
-                            CreatedDate = new DateTime(2024, 4, 28, 16, 2, 38, 805, DateTimeKind.Local).AddTicks(9256),
-                            Description = "Perferendis voluptatem qui aspernatur et.",
+                            CreatedDate = new DateTime(2024, 5, 7, 13, 19, 22, 201, DateTimeKind.Local).AddTicks(8787),
+                            Description = "Rerum cumque tempore quod sed.",
                             IsDeleted = false,
-                            Title = "Facere."
+                            Title = "Qui."
                         },
                         new
                         {
                             Id = 2,
                             CategoryId = 3,
-                            CreatedDate = new DateTime(2024, 4, 28, 16, 2, 38, 805, DateTimeKind.Local).AddTicks(9484),
-                            Description = "Placeat consectetur et aperiam non.",
+                            CreatedDate = new DateTime(2024, 5, 7, 13, 19, 22, 201, DateTimeKind.Local).AddTicks(8935),
+                            Description = "Vitae quasi repudiandae amet voluptatibus.",
                             IsDeleted = true,
-                            Title = "Temporibus."
+                            Title = "Quo."
                         },
                         new
                         {
                             Id = 3,
                             CategoryId = 4,
-                            CreatedDate = new DateTime(2024, 4, 28, 16, 2, 38, 805, DateTimeKind.Local).AddTicks(9607),
-                            Description = "Doloribus aut consectetur delectus et.",
+                            CreatedDate = new DateTime(2024, 5, 7, 13, 19, 22, 201, DateTimeKind.Local).AddTicks(9004),
+                            Description = "Laboriosam ea dolorem est sint.",
                             IsDeleted = false,
-                            Title = "Dolor."
+                            Title = "Exercitationem."
                         });
                 });
 
@@ -239,23 +239,23 @@ namespace ApiProject.Persistence.Migrations
                         {
                             Id = 1,
                             BrandId = 1,
-                            CreatedDate = new DateTime(2024, 4, 28, 16, 2, 38, 810, DateTimeKind.Local).AddTicks(5181),
-                            Description = "Boston's most advanced compression wear technology increases muscle oxygenation, stabilizes active muscles",
-                            Discount = 8.488637953133320m,
+                            CreatedDate = new DateTime(2024, 5, 7, 13, 19, 22, 205, DateTimeKind.Local).AddTicks(842),
+                            Description = "The Football Is Good For Training And Recreational Purposes",
+                            Discount = 3.54017903744740m,
                             IsDeleted = false,
-                            Price = 605.33m,
-                            Title = "Möhtəşəm Polad Sviter"
+                            Price = 108.10m,
+                            Title = "Parlaq Pambıq Kulon"
                         },
                         new
                         {
                             Id = 2,
                             BrandId = 1,
-                            CreatedDate = new DateTime(2024, 4, 28, 16, 2, 38, 810, DateTimeKind.Local).AddTicks(5455),
-                            Description = "The automobile layout consists of a front-engine design, with transaxle-type transmissions mounted at the rear of the engine and four wheel drive",
-                            Discount = 4.918328606960130m,
+                            CreatedDate = new DateTime(2024, 5, 7, 13, 19, 22, 205, DateTimeKind.Local).AddTicks(1007),
+                            Description = "Ergonomic executive chair upholstered in bonded black leather and PVC padded seat and back for all-day comfort and support",
+                            Discount = 3.541393069322210m,
                             IsDeleted = false,
-                            Price = 944.66m,
-                            Title = "Fantastik Polad Sviter"
+                            Price = 375.73m,
+                            Title = "Fantastik Qranit Avtomobil"
                         });
                 });
 
@@ -272,6 +272,213 @@ namespace ApiProject.Persistence.Migrations
                     b.HasIndex("CategoryId");
 
                     b.ToTable("productsCategory");
+                });
+
+            modelBuilder.Entity("ApiProject.Domain.Entities.Role", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("ConcurrencyStamp")
+                        .IsConcurrencyToken()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .HasMaxLength(256)
+                        .HasColumnType("nvarchar(256)");
+
+                    b.Property<string>("NormalizedName")
+                        .HasMaxLength(256)
+                        .HasColumnType("nvarchar(256)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("NormalizedName")
+                        .IsUnique()
+                        .HasDatabaseName("RoleNameIndex")
+                        .HasFilter("[NormalizedName] IS NOT NULL");
+
+                    b.ToTable("AspNetRoles", (string)null);
+                });
+
+            modelBuilder.Entity("ApiProject.Domain.Entities.User", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<int>("AccessFailedCount")
+                        .HasColumnType("int");
+
+                    b.Property<string>("ConcurrencyStamp")
+                        .IsConcurrencyToken()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Email")
+                        .HasMaxLength(256)
+                        .HasColumnType("nvarchar(256)");
+
+                    b.Property<bool>("EmailConfirmed")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("FullName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("LockoutEnabled")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTimeOffset?>("LockoutEnd")
+                        .HasColumnType("datetimeoffset");
+
+                    b.Property<string>("NormalizedEmail")
+                        .HasMaxLength(256)
+                        .HasColumnType("nvarchar(256)");
+
+                    b.Property<string>("NormalizedUserName")
+                        .HasMaxLength(256)
+                        .HasColumnType("nvarchar(256)");
+
+                    b.Property<string>("PasswordHash")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PhoneNumber")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("PhoneNumberConfirmed")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("RefreshToken")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("RefreshTokenExpiryTime")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("SecurityStamp")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("TwoFactorEnabled")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("UserName")
+                        .HasMaxLength(256)
+                        .HasColumnType("nvarchar(256)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("NormalizedEmail")
+                        .HasDatabaseName("EmailIndex");
+
+                    b.HasIndex("NormalizedUserName")
+                        .IsUnique()
+                        .HasDatabaseName("UserNameIndex")
+                        .HasFilter("[NormalizedUserName] IS NOT NULL");
+
+                    b.ToTable("AspNetUsers", (string)null);
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<System.Guid>", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("ClaimType")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ClaimValue")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<Guid>("RoleId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("RoleId");
+
+                    b.ToTable("AspNetRoleClaims", (string)null);
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<System.Guid>", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("ClaimType")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ClaimValue")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<Guid>("UserId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("AspNetUserClaims", (string)null);
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<System.Guid>", b =>
+                {
+                    b.Property<string>("LoginProvider")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("ProviderKey")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("ProviderDisplayName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<Guid>("UserId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("LoginProvider", "ProviderKey");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("AspNetUserLogins", (string)null);
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserRole<System.Guid>", b =>
+                {
+                    b.Property<Guid>("UserId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("RoleId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("UserId", "RoleId");
+
+                    b.HasIndex("RoleId");
+
+                    b.ToTable("AspNetUserRoles", (string)null);
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<System.Guid>", b =>
+                {
+                    b.Property<Guid>("UserId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("LoginProvider")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("Value")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("UserId", "LoginProvider", "Name");
+
+                    b.ToTable("AspNetUserTokens", (string)null);
                 });
 
             modelBuilder.Entity("ApiProject.Domain.Entities.Detail", b =>
@@ -313,6 +520,57 @@ namespace ApiProject.Persistence.Migrations
                     b.Navigation("Category");
 
                     b.Navigation("Product");
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<System.Guid>", b =>
+                {
+                    b.HasOne("ApiProject.Domain.Entities.Role", null)
+                        .WithMany()
+                        .HasForeignKey("RoleId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<System.Guid>", b =>
+                {
+                    b.HasOne("ApiProject.Domain.Entities.User", null)
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<System.Guid>", b =>
+                {
+                    b.HasOne("ApiProject.Domain.Entities.User", null)
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserRole<System.Guid>", b =>
+                {
+                    b.HasOne("ApiProject.Domain.Entities.Role", null)
+                        .WithMany()
+                        .HasForeignKey("RoleId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("ApiProject.Domain.Entities.User", null)
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<System.Guid>", b =>
+                {
+                    b.HasOne("ApiProject.Domain.Entities.User", null)
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("ApiProject.Domain.Entities.Category", b =>

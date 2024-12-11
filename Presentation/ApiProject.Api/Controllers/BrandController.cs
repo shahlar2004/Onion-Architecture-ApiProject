@@ -1,6 +1,7 @@
-﻿using ApiProject.Application.Features.Query.Brands.GetAllBrands;
+﻿using ApiProject.Application.Features.Brands.Query.Brands.GetAllBrands;
 using AutoMapper;
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -17,8 +18,8 @@ namespace ApiProject.Api.Controllers
             this.mediator = mediator;
         }
 
+        [Authorize(AuthenticationSchemes = "Bearer")]
         [HttpGet]
-
         public async Task<IActionResult> GetAllBrands()
         {
             var response = await mediator.Send(new GetAllBrandsQueryRequest());
