@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ApiProject.Application.Features.Command.DeleteProduct
+namespace ApiProject.Application.Features.Products.Command.DeleteProduct
 {
     public class DeleteProductCommandHandler : IRequestHandler<DeleteProductCommandRequest>
     {
@@ -19,7 +19,7 @@ namespace ApiProject.Application.Features.Command.DeleteProduct
         }
         public async Task Handle(DeleteProductCommandRequest request, CancellationToken cancellationToken)
         {
-            var product = await unitOfWork.GetReadRepoitory<Product>().GetAsync(x=>x.Id==request.Id && !x.IsDeleted);
+            var product = await unitOfWork.GetReadRepoitory<Product>().GetAsync(x => x.Id == request.Id && !x.IsDeleted);
             product.IsDeleted = true;
             await unitOfWork.GetWriteRepostitory<Product>().UpdateAsync(product);
             await unitOfWork.SaveAsync();

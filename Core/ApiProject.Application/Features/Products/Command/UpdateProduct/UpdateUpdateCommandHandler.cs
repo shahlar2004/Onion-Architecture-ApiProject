@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ApiProject.Application.Features.Command.UpdateProduct
+namespace ApiProject.Application.Features.Products.Command.UpdateProduct
 {
     public class UpdateUpdateCommandHandler : IRequestHandler<UpdateProductCommandRequest>
     {
@@ -46,8 +46,8 @@ namespace ApiProject.Application.Features.Command.UpdateProduct
 
                 throw new Exception("Olmadi");
             }
-         
-             
+
+
         }
     }
 }

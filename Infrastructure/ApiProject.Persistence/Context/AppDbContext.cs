@@ -1,6 +1,7 @@
 ﻿
 
 using ApiProject.Domain.Entities;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace ApiProject.Persistence.Context
 {
-    public class AppDbContext:DbContext
+    public class AppDbContext:IdentityDbContext<User,Role,Guid>
     {
 
         public AppDbContext()
